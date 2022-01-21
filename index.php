@@ -19,13 +19,13 @@
   <form method="post" action='index.php'>
 
     <label for="rolls">Number of rolls </label> <br />
-        <input type="text" name="rolls" value="<?=$rolls?>"> <br /><br />
+        <input type="number" name="rolls" value="<?=$rolls?>"> <br /><br />
 
     <label for="dice">Number of Dice </label> <br />
-        <input type="text" name="dice" value="<?=$dice?>"> <br /><br />
+        <input type="number" name="dice" value="<?=$dice?>"> <br /><br />
 
     <label for="Number">Your Number 1-6 </label> <br />
-        <input type="text" name="number" value="<?=$number?>"> <br /><br />
+        <input type="number" name="number" value="<?=$number?>"> <br /><br />
 
     <button type="submit"> roll the dice! </button>
 
@@ -38,7 +38,7 @@
     if($_POST) {
         $total_hits = [];
         for($i=1; $i<=$rolls; $i++) {
-            $hits++;
+            $hits = 0;
 
             for($x=1; $x<=$dice; $x++) {
                 if($number === mt_rand(1,6)) {
@@ -52,7 +52,7 @@
     ksort($total_hits);
 
     foreach($total_hits as $key=>$result) {
-        echo "Your selected number appeared on a die $key times in $result rounds. <br />" ;
+        echo "Your selected number appeared on a die $key times in $result rolls. <br />" ;
     }
 ?>
 </section>
