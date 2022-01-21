@@ -33,6 +33,7 @@
 
 </section>
 
+<section class="php-class">
 <?php
     if($_POST) {
         $total_hits = [];
@@ -54,6 +55,7 @@
         echo "Your selected number appeared on a die $key times in $result rounds. <br />" ;
     }
 ?>
+</section>
 
 
 
