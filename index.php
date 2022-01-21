@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <?php
@@ -14,8 +15,8 @@
     $number = (INT)$_POST['number'] ?? 6;
 
 ?>
-
-<form method="post" action='index.php'>
+<section>
+  <form method="post" action='index.php'>
 
     <label for="rolls">Number of rolls </label> <br />
         <input type="text" name="rolls" value="<?=$rolls?>"> <br /><br />
@@ -28,7 +29,9 @@
 
     <button type="submit"> roll the dice! </button>
 
-</form>
+  </form>
+
+</section>
 
 <?php
     if($_POST) {
@@ -51,6 +54,10 @@
         echo "Your selected number appeared on a die $key times in $result rounds. <br />" ;
     }
 ?>
+
+
+
+
 
 </body>
 </html>
